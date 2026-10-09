@@ -1,89 +1,153 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss"> @custom-variant dark (&:where(.dark, .dark *));
-    </style>
+    <title>Queen Rosemher Dumali - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
 </head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 font-sans min-h-screen">
 
-<body class="text-center dark:bg-slate-900 bg-white text-slate-900 dark:text-white">
-    <h1 class="text-3xl font-bold">Queen Rosemher Dumali</h1>
-
-    <header>
-        <h1 class="text-3xl text-red-500 font-bold underline">
-            Hello world!
-        </h1>
-        <nav class="flex justify-between items-center mx-[50px] max-[600px]:flex-col">
-            <span class="text-blue-500 text-[50px]">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 tracking-tight">
                 @Icydimple
-            </span>
-            <ul class="flex gap-5 list-none max-[600px]:flex-col">
-                <li><a href="#projects" class="hover:text-red-500">Projects</a></li>
-                <li><a href="#services" class="hover:text-red-300">Services</a></li>
-                <li><a href="#contact" class="hover:text-red-200">Contact Me</a></li>
-            </ul>
-        </nav>
+            </a>
+            
+            <nav class="flex items-center space-x-6">
+                <a href="#projects" class="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition">Projects</a>
+                <a href="#services" class="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition">Services</a>
+                <a href="#contact" class="font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition">Contact</a>
+                
+                <!-- Dark Mode Toggle Button -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+                    <span id="themeIcon">🌙</span>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <main class="flex flex-wrap gap-[30px] p-[50px] m-[50px] max-[600px]:p-[15px]
-     max-[600px]:m-[10px]">
-        <!-- Projects -->
-        <section id="projects" class="flex-1 min-w-[280px] border-2 border-black p-5 
-        bg-orange-400 max-[600px]:min-w-0">
-            <h2 class="max-[768px]:text-[48px] max-[768px]:text-blue-500">
-                My Projects
-            </h2>
-            <p>
-                Personal portfolio, payroll system, company website,startup website, and compliance monitoring system.
-            </p>
-        </section>
-        <!-- Services -->
-        <section id="services" class="flex-1 min-w-[280px] border-2 border-blue-300 dark:border-slate-800 dark:bg-slate-900 p-5
-         bg-green-500 max-[600px]:min-w-0">
-            <h2 class="max-[768px]:text-[48px] max-[768px]:text-darkblue-500">
-                My Services
-            </h2>
-            <p>
-                Website Creation, System Creation, AI Automation,Database Management, Project Management, Systems
-                Analyst
-            </p>
-        </section>
-        <!-- Contact -->
-        <section id="contact" class="flex-1 min-w-[280px] border-2 border-black p-5 
-        bg-pink-500 max-[600px]:min-w-0">
-            <h2 class="max-[768px]:text-[48px] max-[768px]:text-blue-500">
-                Let's build together!
-            </h2>
-            <form action="#" class="flex flex-col gap-5">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" required class="border border-gray-400 p-2">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required class="border border-gray-400 p-2">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required class="border border-gray-400 p-2">
-                </textarea>
-                <button type="submit" class="bg-black text-white p-3 rounded-[15px] hover:bg-red-500">
-                    Send Message
-                </button>
-            </form>
-        </section>
-    </main>
-    <button id="switch"class="bg-black text-white p-(12px) rounded-[10px] transition-colors duration-500 ease-in-out hover:bg-pink-500">switch</button>
-    <button id="toggledark"class="bg-black text-white p-(12px) rounded-[10px] transition-colors duration-500 ease-in-out hover:bg-pink-500">Toggledark</button>
-    <script src="script.js"></script>
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto text-center py-20 px-6">
+        <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+            Queen Rosemher Dumali
+        </h1>
+        <p class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 mb-8 font-light">
+            Systems Analyst • Web Developer • AI Automation Specialist
+        </p>
+        <div class="flex justify-center gap-4">
+            <a href="#contact" class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition shadow-lg shadow-indigo-500/25">
+                Get in Touch
+            </a>
+            <a href="#projects" class="px-6 py-3 bg-slate-200 dark:bg-slate-800 font-medium rounded-lg hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+                View Work
+            </a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold mb-2">Payroll System</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Automated payroll management and employee processing solution.</p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold mb-2">Compliance Monitoring</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Real-time system for tracking organizational and regulatory compliance.</p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition">
+                <h3 class="text-xl font-bold mb-2">Company & Startup Web</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Modern, high-converting websites designed for modern businesses.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="max-w-6xl mx-auto py-16 px-6 bg-slate-100/50 dark:bg-slate-800/30 rounded-2xl my-8">
+        <h2 class="text-3xl font-bold text-center mb-12">My Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">Website Creation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Custom responsive websites designed for mobile and desktop screens.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">System Creation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Custom web applications and internal tools for business operations.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">AI Automation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Streamline workflows and repetitive tasks using modern AI tools.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">Database Management</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Reliable data architecture design and efficient query management.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">Project Management</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">End-to-end management to deliver technical projects on schedule.</p>
+            </div>
+            <div class="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+                <h3 class="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">Systems Analyst</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Analyzing workflow bottlenecks and designing technical solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-4">Let's Build Together!</h2>
+        <p class="text-center text-slate-600 dark:text-slate-400 mb-8">Send me a message and let's discuss your next project.</p>
+
+        <form onsubmit="alert('Message Sent!'); return false;" class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                <input type="text" id="name" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                <input type="email" id="email" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none">
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                <textarea id="message" rows="4" required class="w-full px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition">
+                Send Message
+            </button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-sm text-slate-500">
+        © <span id="year"></span> Queen Rosemher Dumali. All rights reserved.
+    </footer>
+
+    <!-- Light/Dark Mode JavaScript -->
     <script>
-        const toggleDarkButton = document.querySelector('#toggledark');
-        const html = document.querySelector('html');
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
 
-        toggleDarkButton.addEventListener('click', function(){
+        themeToggleBtn.addEventListener('click', () => {
             html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            themeIcon.textContent = isDark ? '☀️' : '🌙';
         });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-
 </body>
-
 </html>
